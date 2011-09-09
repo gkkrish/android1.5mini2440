@@ -1,0 +1,4 @@
+config SND_SHINE_AUDIO_DRIVER
+	tristate "ShineLK Audio Driver For Android"
+       	select SND_S3C24XX_SOC_I2S
+       	select SND_SOC_UDA134X
