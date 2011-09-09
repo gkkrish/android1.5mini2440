@@ -1,0 +1,12 @@
+#!/bin/sh
+
+export PATH=$PATH:/bin:system/bin
+export LD_LIBRARY_PATH=/lib:/system/lib
+
+mknod /myDev/ts0 c 13 65
+mknod /myDev/fb0 c 29 0
+mknod /myDev/ts_ctl c 10 87
+
+/bin/ts
+
+exec /system/bin/init

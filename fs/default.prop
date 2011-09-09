@@ -1,0 +1,10 @@
+#
+# ADDITIONAL_DEFAULT_PROPERTIES
+#
+ro.secure=0
+ro.debuggable=1
+persist.service.adb.enable=1
+
+persist.sys.country = US
+persist.sys.language = en
+persist.sys.timezone = Asia/Hong_Kong

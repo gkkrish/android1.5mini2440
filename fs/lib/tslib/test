@@ -1,0 +1,13 @@
+#!/bin/sh
+
+export TSLIB_ROOT=/lib/tslib
+export TSLIB_TSDEVICE=/myDev/ts0
+export TSLIB_CALIBFILE=/system/etc/shine/pointercal
+export TSLIB_CONFFILE=$TSLIB_ROOT/etc/ts.conf
+export TSLIB_PLUGINDIR=$TSLIB_ROOT/lib/ts
+export TSLIB_CONSOLEDEVICE=none
+export TSLIB_FBDEVICE=/myDev/fb0
+export LD_LIBRARY_PATH=$TSLIB_ROOT/lib
+/lib/tslib/bin/ts_calibrate
+
+

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+export PATH=$PATH:/bin:system/bin
+export LD_LIBRARY_PATH=/lib:/system/lib
+
+source /system/etc/shine/net.conf
+echo $NET
+ifconfig $NET up
+wpa_supplicant -B -i$NET -c/system/etc/shine/wpa_supplicant.conf
+
+if [ $IP ] ; then
+	ifconfig $NET $IP
+	route add default gw $GW
+else
+	netcfg $NET dhcp
+fi
+setprop net.dns1 $DNS
+
+#insmod /lib/modules/g_file_storage.ko file=/dev/block/mmcblk0p1 stall=0 removable=1
+
